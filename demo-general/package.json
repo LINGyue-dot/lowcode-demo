@@ -16,6 +16,7 @@
   ],
   "config": {},
   "dependencies": {
+    "@alifd/next": "^1.27.32",
     "@alilc/lowcode-datasource-fetch-handler": "^1.0.1",
     "@alilc/lowcode-plugin-code-editor": "^1.0.3",
     "@alilc/lowcode-plugin-code-generator": "^1.0.4",
@@ -31,7 +32,9 @@
     "@alilc/lowcode-react-renderer": "^1.1.2",
     "@alilc/lowcode-setter-behavior": "^1.0.0",
     "@alilc/lowcode-setter-title": "^1.0.2",
+    "@alilc/lowcode-utils": "^1.3.4",
     "antd": "^4.21.4",
+    "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "uuid": "^8.3.2"
   },
