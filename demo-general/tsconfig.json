@@ -40,5 +40,18 @@
   "include": [
     "./src/"
   ],
-  "exclude": ["**/test", "**/lib", "**/es", "node_modules"]
+  "exclude": ["**/test", "**/lib", "**/es", "node_modules"],
+  "paths": {
+    "@alilc/lowcode-engine": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/engine/src"],
+    "@alilc/lowcode-designer": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/designer/src"],
+    "@alilc/lowcode-editor-core": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/editor-core/src"],
+    "@alilc/lowcode-editor-skeleton": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/editor-skeleton/src"],
+    "@alilc/lowcode-engine-ext": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/engine-ext/src"],
+    "@alilc/lowcode-plugin-command": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/plugin-command/src"],
+    "@alilc/lowcode-plugin-designer": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/plugin-designer/src"],
+    "@alilc/lowcode-plugin-outline-pane": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/plugin-outline-pane/src"],
+    "@alilc/lowcode-shell": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/shell/src"],
+    "@alilc/lowcode-utils": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/utils/src"],
+    "@alilc/lowcode-workspace": ["/Users/chenshunze/Desktop/code/lowcode-engine/packages/workspace/src"]
+  }
 }

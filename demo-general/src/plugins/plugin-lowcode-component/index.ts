@@ -11,7 +11,7 @@ const lowcodePlugin = (ctx: IPublicModelPluginContext) => {
           devMode: 'lowCode',
           componentName: 'LowcodeDemo',
           title: '低代码组件示例',
-          group: '低代码组件',
+          group: 'cosmo components',
           schema: lowcodeSchema as any,
           snippets: [{
             schema: {

@@ -1,13 +1,13 @@
-import { init, plugins } from '@alilc/lowcode-engine';
-import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler'
+import { common, config, init, plugins, skeleton } from '@alilc/lowcode-engine';
+import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler';
 import EditorInitPlugin from './plugins/plugin-editor-init';
 import UndoRedoPlugin from '@alilc/lowcode-plugin-undo-redo';
 import ZhEnPlugin from '@alilc/lowcode-plugin-zh-en';
 import CodeGenPlugin from '@alilc/lowcode-plugin-code-generator';
 import DataSourcePanePlugin from '@alilc/lowcode-plugin-datasource-pane';
 import SchemaPlugin from '@alilc/lowcode-plugin-schema';
-import CodeEditorPlugin from "@alilc/lowcode-plugin-code-editor";
-import ManualPlugin from "@alilc/lowcode-plugin-manual";
+import CodeEditorPlugin from '@alilc/lowcode-plugin-code-editor';
+import ManualPlugin from '@alilc/lowcode-plugin-manual';
 import InjectPlugin from '@alilc/lowcode-plugin-inject';
 import SimulatorResizerPlugin from '@alilc/lowcode-plugin-simulator-select';
 import ComponentPanelPlugin from '@alilc/lowcode-plugin-components-pane';
@@ -20,6 +20,7 @@ import SetRefPropPlugin from '@alilc/lowcode-plugin-set-ref-prop';
 import LogoSamplePlugin from './plugins/plugin-logo-sample';
 import SimulatorLocalePlugin from './plugins/plugin-simulator-locale';
 import lowcodePlugin from './plugins/plugin-lowcode-component';
+import DeviceSetterPlugin from './plugins/plugin-device-setter';
 import appHelper from './appHelper';
 import './global.scss';
 
@@ -41,11 +42,15 @@ async function registerPlugins() {
         },
         {
           key: 'fusion 物料',
-          value: 'https://github.com/alibaba/lowcode-materials/tree/main/packages/fusion-lowcode-materials',
-        }
+          value:
+            'https://github.com/alibaba/lowcode-materials/tree/main/packages/fusion-lowcode-materials',
+        },
       ],
     },
   });
+
+  // 注册设备设置插件
+  await plugins.register(DeviceSetterPlugin);
 
   // 设置内置 setter 和事件绑定、插件绑定面板
   await plugins.register(DefaultSettersRegistryPlugin);
@@ -79,8 +84,8 @@ async function registerPlugins() {
       },
       {
         type: 'jsonp',
-      }
-    ]
+      },
+    ],
   });
 
   await plugins.register(CodeEditorPlugin);
@@ -94,25 +99,26 @@ async function registerPlugins() {
 
   await plugins.register(CustomSetterSamplePlugin);
 
-  // 设计器区域多语言切换
-  await plugins.register(SimulatorLocalePlugin);
+  // // 设计器区域多语言切换
+  // await plugins.register(SimulatorLocalePlugin);
 
   await plugins.register(lowcodePlugin);
-};
+}
 
 (async function main() {
   await registerPlugins();
 
+  const a = document.getElementById('lce-container');
   init(document.getElementById('lce-container')!, {
-    locale: 'zh-CN',
-    enableCondition: true,
-    enableCanvasLock: true,
-    // 默认绑定变量
-    supportVariableGlobally: true,
-    requestHandlersMap: {
-      fetch: createFetchHandler(),
-    },
-    appHelper,
-    enableContextMenu: true,
+    // locale: 'zh-CN',
+    // enableCondition: true,
+    // enableCanvasLock: true,
+    // // 默认绑定变量
+    // supportVariableGlobally: true,
+    // requestHandlersMap: {
+    //   fetch: createFetchHandler(),
+    // },
+    // appHelper,
+    // enableContextMenu: true,
   });
 })();
